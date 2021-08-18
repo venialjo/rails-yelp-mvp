@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reviews, only: [:new, :create]
   end
-  resources :reviews, only: [:destroy]
+  get 'reviews/:id', to: 'reviews#destroy', as: 'review'
 end
